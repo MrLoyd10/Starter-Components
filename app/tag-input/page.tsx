@@ -1,15 +1,16 @@
 "use client";
+import { Layout } from "@/components/common/layout";
 import { TagsInput } from "@/components/form/tags-input";
 import { useState } from "react";
 
 const TagInput = () => {
   const [tags, setTags] = useState<string[]>([]);
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="w-[300px]">
+    <Layout header="Tags Input" headerClassName="w-[500px]">
+      <div className="w-[500px]">
         <TagsInput value={tags} onChange={setTags} />
       </div>
-    </div>
+    </Layout>
   );
 };
 

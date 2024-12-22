@@ -12,8 +12,16 @@ const Items = [
     href: "/breadcrumb",
   },
   {
-    label: "multi select",
+    label: "Multi Select",
     href: "/multi-select",
+  },
+  {
+    label: "Select",
+    href: "/select",
+  },
+  {
+    label: "Server Side Select",
+    href: "/server-side-select",
   },
   {
     label: "Auto Complete",
@@ -27,6 +35,26 @@ const Items = [
     label: "Calendar",
     href: "/calendar",
   },
+  {
+    label: "Calendar Range",
+    href: "/calendar-range",
+  },
+  {
+    label: "Tiptap Rich Text",
+    href: "/tiptap",
+  },
+  {
+    label: "File Uploader",
+    href: "/file-uploader",
+  },
+  {
+    label: "Uploaded File",
+    href: "/uploaded-file",
+  },
+  {
+    label: "Search Input",
+    href: "/search-input",
+  },
 ];
 
 export default function Home() {
@@ -34,13 +62,13 @@ export default function Home() {
     <div className="min-h-[2000px]">
       <Header />
 
-      <div className="gap-4 grid grid-cols-3 grid-rows-5">
+      <div className="gap-4 grid grid-cols-3 grid-rows-5 p-5">
         {Items.map((item, index) => (
-          <div key={index} className="flex justify-center items-center h-36">
-            <Button variant="link" asChild>
-              <Link href={item.href}>{item.label}</Link>
-            </Button>
-          </div>
+          <Link href={item.href} key={index}>
+            <div className="flex justify-center items-center border-slate-200 hover:bg-muted border w-full h-36">
+              {item.label}
+            </div>
+          </Link>
         ))}
       </div>
     </div>

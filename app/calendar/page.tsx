@@ -1,4 +1,5 @@
 "use client";
+import { Layout } from "@/components/common/layout";
 import Calendar from "@/components/form/calendar";
 import { useState } from "react";
 
@@ -6,8 +7,8 @@ const CalendarPage = () => {
   const [date, setDate] = useState<Date | null>(null);
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="w-[300px]">
+    <Layout header="Calendar" headerClassName="w-[500px]">
+      <div className="w-[500px]">
         <Calendar
           selectedDate={date ?? null}
           onDateChange={(newDate) => setDate(newDate || null)}
@@ -15,7 +16,7 @@ const CalendarPage = () => {
           // onDateChange={field.onChange}
         />
       </div>
-    </div>
+    </Layout>
   );
 };
 

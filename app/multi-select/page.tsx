@@ -1,4 +1,5 @@
 "use client";
+import { Layout } from "@/components/common/layout";
 import { MultiSelect, MultiSelectItems } from "@/components/form/multi-select";
 import { useState } from "react";
 
@@ -10,11 +11,11 @@ const Items: MultiSelectItems[] = [
 const MultiSelectPage = () => {
   const [select, setSelect] = useState<MultiSelectItems[]>([]);
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="w-[300px]">
+    <Layout header="Multi Select" headerClassName="w-[500px]">
+      <div className="w-[500px]">
         <MultiSelect values={select} onValuesChange={setSelect} items={Items} />
       </div>
-    </div>
+    </Layout>
   );
 };
 
